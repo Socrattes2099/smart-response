@@ -1,0 +1,15 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>CaseComments creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('casecomments') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

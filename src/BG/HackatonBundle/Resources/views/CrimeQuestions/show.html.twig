@@ -1,0 +1,40 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>CrimeQuestions</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Question</th>
+                <td>{{ entity.question }}</td>
+            </tr>
+            <tr>
+                <th>Questionnumber</th>
+                <td>{{ entity.questionNumber }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('crimequestions') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('crimequestions_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

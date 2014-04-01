@@ -1,0 +1,45 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>CaseMtResponses list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Destaddress</th>
+                <th>Senttime</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('casemtresponses_show', { 'id': entity.id }) }}">{{ entity.message }}</a></td>
+                <td>{{ entity.destAddress }}</td>
+                <td>{% if entity.sentTime %}{{ entity.sentTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('casemtresponses_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('casemtresponses_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('casemtresponses_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

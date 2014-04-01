@@ -1,0 +1,7 @@
+parameters:
+#    bg_hackaton.example.class: BG\HackatonBundle\Example
+
+services:
+#    bg_hackaton.example:
+#        class: %bg_hackaton.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,36 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>CaseComments</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Comment</th>
+                <td>{{ entity.comment }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('casecomments') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('casecomments_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

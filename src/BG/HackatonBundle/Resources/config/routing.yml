@@ -1,0 +1,40 @@
+home:
+  path: /
+  defaults: { _controller: BGHackatonBundle:CrimeCases:index }
+
+cases:
+    resource: "@BGHackatonBundle/Controller/CrimeCasesController.php"
+    type:     annotation
+
+
+comments:
+    resource: "@BGHackatonBundle/Controller/CaseCommentsController.php"
+    type:     annotation
+
+mt_responses:
+    resource: "@BGHackatonBundle/Controller/CaseMtResponsesController.php"
+    type:     annotation
+
+categories:
+    resource: "@BGHackatonBundle/Controller/CrimeCategoriesController.php"
+    type:     annotation
+
+questions:
+    resource: "@BGHackatonBundle/Controller/CrimeQuestionsController.php"
+    type:     annotation
+
+question_options:
+    resource: "@BGHackatonBundle/Controller/CrimeQuestionOptionsController.php"
+    type:     annotation
+
+general_options:
+    resource: "@BGHackatonBundle/Controller/GeneralQuestionController.php"
+    type:     annotation
+
+broadcast_numbers:
+    resource: "@BGHackatonBundle/Controller/BroadcastNumbersController.php"
+    type:     annotation
+
+receive_mo:
+    path: /receive_mo
+    defaults: { _controller: BGHackatonBundle:MOReceiver:receiveMessage }

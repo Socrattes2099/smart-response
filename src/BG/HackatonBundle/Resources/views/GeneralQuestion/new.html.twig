@@ -1,0 +1,15 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>GeneralQuestion creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('generalquestion') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

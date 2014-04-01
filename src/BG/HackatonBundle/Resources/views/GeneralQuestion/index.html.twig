@@ -1,0 +1,45 @@
+{% extends '::index.html.twig' %}
+
+{% block body -%}
+    <h1>GeneralQuestion list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Questionnumber</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('generalquestion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.question }}</td>
+                <td>{{ entity.questionNumber }}</td>
+                <td>{{ entity.type }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('generalquestion_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('generalquestion_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('generalquestion_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,4 @@
+bg_hackaton:
+    resource: "@BGHackatonBundle/Resources/config/routing.yml"
+    prefix:   /
+
